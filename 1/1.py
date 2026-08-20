@@ -12,7 +12,5 @@ class Dog(Animal):
 class Cat(Animal):
     def sound(self):
         return "Meow!"
-
-# Example
 print(Dog().sound())
 print(Cat().sound())
