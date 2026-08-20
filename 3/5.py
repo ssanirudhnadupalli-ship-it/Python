@@ -8,6 +8,7 @@ conn = mysql.connector.connect(
 )
 
 cursor = conn.cursor()
+
 students = [
     ("Ravi", 21, "IT", 78),
     ("Sita", 22, "CSE", 90),
@@ -16,8 +17,13 @@ students = [
     ("Kiran", 21, "IT", 72)
 ]
 
-cursor.executemany("INSERT INTO students (name, age, course, marks) VALUES (%s, %s, %s, %s)", students)
+cursor.executemany(
+    "INSERT INTO students (name, age, course, marks) VALUES (%s, %s, %s, %s)",
+    students
+)
+
 conn.commit()
-print("Five student records inserted!")
+
+print("Five student records inserted successfully!")
 
 conn.close()
